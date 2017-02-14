@@ -16,7 +16,7 @@ android {
         }
 
         task ndkBuild(type: Exec) {
-            commandLine '/Users/ricardobravo/Library/Android/sdk/ndk-bundle', '-C', file('src/main/cpp').absolutePath
+            commandLine '/Users/ricardobravo/Library/Android/sdk/ndk-bundle', '-C', file('src/main/').absolutePath
         }
 
         ndk {
