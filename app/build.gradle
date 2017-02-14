@@ -19,6 +19,11 @@ android {
             commandLine '/Users/ricardobravo/Library/Android/sdk/ndk-bundle', '-C', file('src/main/cpp').absolutePath
         }
 
+        ndk {
+            moduleName "native-lib"
+            abiFilters "armeabi-v7a", "arm64-v8a", "armeabi", "x86", "x86_64", "mips", "mips64"
+        }
+
     }
     buildTypes {
         release {
@@ -27,11 +32,6 @@ android {
         }
     }
 
-    externalNativeBuild {
-        cmake {
-            path "CMakeLists.txt"
-        }
-    }
 
 }
 
