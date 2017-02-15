@@ -9,33 +9,15 @@ android {
         versionCode 1
         versionName "1.0"
 
-        externalNativeBuild {
-            cmake {
-                arguments '-DANDROID_PLATFORM=android-13',
-                        '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=gnustl_static'
-            }
-        }
 
         task ndkBuild(type: Exec) {
-            commandLine '/Users/ricardobravo/Library/Android/sdk/ndk-bundle', '-C', file('src/main/cpp').absolutePath
+            //commandLine '/Users/ricardobravo/Library/Android/sdk/ndk-bundle', '-C', file('src/main/cpp').absolutePath
+            commandLine 'ndk-bundle', '-C', file('src/main').absolutePath
         }
 
         ndk {
             abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a', 'arm64-v8a'
         }
-
-        sourceSets.main.jni.srcDirs = [] // disable automatic ndk-build call, which ignore our Android.mk
-        sourceSets.main.jniLibs.srcDir 'src/main/libs'
-
-        /*
-        // call regular ndk-build(.cmd) script from app directory
-        task ndkBuild(type: Exec) {
-            workingDir file('src/main')
-            commandLine getNdkBuildCmd()
-        }
-        */
-
-
 
     }
     buildTypes {
