@@ -17,7 +17,7 @@ android {
         }
 
         task ndkBuild(type: Exec) {
-            commandLine '/Users/ricardobravo/Library/Android/sdk/ndk-bundle', '-C', file('src/main/').absolutePath
+            commandLine '/Users/ricardobravo/Library/Android/sdk/ndk-bundle', '-C', file('src/main/cpp').absolutePath
         }
 
         ndk {
@@ -32,11 +32,13 @@ android {
         }
     }
 
+    /*
     externalNativeBuild {
         cmake {
             path 'CMakeLists.txt'
         }
     }
+    */
 
 }
 
