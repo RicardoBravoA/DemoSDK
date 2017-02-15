@@ -20,9 +20,9 @@ android {
 
         task ndkBuild(type: Exec) {
             if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-                commandLine 'ndk-build.cmd', '-C', file('src/main').absolutePath
+                commandLine 'ndk-bundle.cmd', '-C', file('src/main').absolutePath
             } else {
-                commandLine 'ndk-build', '-C', file('src/main').absolutePath
+                commandLine 'ndk-bundle', '-C', file('src/main').absolutePath
             }
         }
 
