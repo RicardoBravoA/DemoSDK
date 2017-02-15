@@ -23,6 +23,15 @@ ANDROID_NATIVE_API_LEVEL:UNINITIALIZED=21
 //No help, variable specified on the command line.
 ANDROID_NDK:UNINITIALIZED=/Users/ricardobravo/Library/Android/sdk/ndk-bundle
 
+//No help, variable specified on the command line.
+ANDROID_PLATFORM:UNINITIALIZED=android-13
+
+//No help, variable specified on the command line.
+ANDROID_STL:UNINITIALIZED=gnustl_static
+
+//No help, variable specified on the command line.
+ANDROID_TOOLCHAIN:UNINITIALIZED=clang
+
 //Path to a program.
 CMAKE_AR:FILEPATH=/Users/ricardobravo/Library/Android/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/darwin-x86_64/bin/aarch64-linux-android-ar
 
