@@ -24,6 +24,19 @@ android {
             abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a', 'arm64-v8a'
         }
 
+        sourceSets.main.jni.srcDirs = [] // disable automatic ndk-build call, which ignore our Android.mk
+        sourceSets.main.jniLibs.srcDir 'src/main/libs'
+
+        /*
+        // call regular ndk-build(.cmd) script from app directory
+        task ndkBuild(type: Exec) {
+            workingDir file('src/main')
+            commandLine getNdkBuildCmd()
+        }
+        */
+
+
+
     }
     buildTypes {
         release {
@@ -32,11 +45,13 @@ android {
         }
     }
 
+    /*
     externalNativeBuild {
         cmake {
             path 'CMakeLists.txt'
         }
     }
+    */
 
 }
 
